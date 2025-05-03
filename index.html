@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puffle Memory Card Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montaga&family=Neonderthaw&family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="logo">
+        <h1 class="logo-1">Memory Card</h1>
+        <h1 class="logo-2">Game</h1>
+      </div>
+      <button id="start-button">Start a new game</button>
+
+      <div class="difficulty-button hidden">
+        <p>Select difficulty:</p>
+        <button id="easy">Easy (12 cards)</button>
+        <button id="medium">Medium (16 cards)</button>
+        <button id="hard">Hard (20 cards)</button>
+      </div>
+
+      <div class="bottom-section">
+        <div class="game-board hidden"></div>
+        <p id="moves-container" class="hidden">
+          Moves: <span id="moves-counter">0</span>
+        </p>
+      </div>
+
+      <p id="finish-message" class="hidden"></p>
+      <button id="play-again-button" class="hidden">Play again?</button>
+    </main>
+    <footer>
+      <p>Copyright © 2025 Hoha Ruxandra</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

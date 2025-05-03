@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    136deg,
+    rgba(235, 189, 136, 1) 0%,
+    rgba(247, 199, 143, 1) 20%,
+    rgba(187, 204, 137, 1) 100%
+  );
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+  max-width: 80ch;
+  margin: 2rem auto;
+}
+
+footer {
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100vw;
+  text-align: center;
+}
+
+h1 {
+  color: black;
+  font-size: 7em;
+  font-family: "Neonderthaw", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 40px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo-1 {
+  z-index: 1;
+}
+
+.logo-2 {
+  font-family: "Rubik Mono One", monospace !important;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: -70px;
+  color: #fcd4cc;
+  text-shadow:
+    2px 0 #623c32,
+    -2px 0 #623c32,
+    0 2px #623c32,
+    0 -2px #623c32,
+    1px 1px #623c32,
+    -1px -1px #623c32,
+    -1px 1px #623c32,
+    1px -1px #623c32,
+    2px 5px #623c32,
+    -2px 5px #623c32;
+}
+
+.logo,
+.logo-1,
+.logo-2 {
+  transition: all 0.6s ease;
+}
+
+.logo.minimised {
+  transform: translateY(-40%);
+  scale: 0.6;
+  margin: 0 auto;
+}
+
+.logo-2.minimised {
+  margin: 0 auto;
+}
+
+button,
+p {
+  font-family: "Montaga", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+  background-color: #ffffff;
+  color: #623c32;
+  border: 1px #623c32 solid;
+  padding: 15px 25px;
+  font-size: 1.4em;
+  cursor: pointer;
+  border-radius: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 7rem auto;
+}
+
+.difficulty-button p {
+  font-size: 1.6em;
+  margin: 5rem 0 10px 0;
+  text-align: center;
+}
+
+.difficulty-button button {
+  display: inline-block;
+  margin: 2rem 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.game-board {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  max-width: 500px; /* optional, keeps the grid compact */
+  margin: 0 auto;
+  margin-top: -5rem;
+}
+
+.game-board.easy {
+  padding-top: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-bottom: 2rem;
+}
+
+.game-board.medium {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.game-board.hard {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  max-width: 600px;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 120px;
+  display: grid;
+  perspective: 1000px;
+  background-color: white;
+  border: 4px solid white;
+  border-radius: 8%;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: relative; /* Needed for absolute children */
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(180deg); /* Initially hidden */
+}
+
+.card-back {
+  transform: rotateY(0deg); /* Initially visible */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-back img {
+  object-fit: cover;
+}
+
+#moves-container {
+  margin: 15px auto -10px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#finish-message {
+  margin: 10rem auto -5rem;
+  text-align: center;
+  font-size: 1.5em;
+}
