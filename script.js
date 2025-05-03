@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let secondCard = null;
   let lockBoard = false;
   let moveCount = 0;
+  let difficulty = "";
 
   startButton.addEventListener("click", () => {
     startButton.classList.toggle("hidden");
@@ -46,16 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
   easyButton.addEventListener("click", () => {
     startGame(12);
     gameBoard.classList.add("easy");
+    difficulty = "easy";
   });
 
   mediumButton.addEventListener("click", () => {
     startGame(16);
     gameBoard.classList.add("medium");
+    difficulty = "medium";
   });
 
   hardButton.addEventListener("click", () => {
     startGame(20);
     gameBoard.classList.add("hard");
+    difficulty = "hard";
   });
 
   function shuffle(array) {
@@ -166,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     movesContainer.classList.add("hidden");
     congratsMessage.classList.remove("hidden");
 
-    congratsMessage.textContent = `Congrats! You finished the game in ${moveCount} moves!`;
+    congratsMessage.textContent = `Congrats! You finished the game in ${moveCount} moves on ${difficulty} mode!`;
     playAgainButton.classList.remove("hidden");
 
     playAgainButton.addEventListener("click", () => {

@@ -1,0 +1,19 @@
+# Node modules and environment clutter
+node_modules/
+.DS_Store
+
+# Editor-specific folders
+.vscode/
+
+# ESLint and Prettier config files
+eslint.config.*
+.prettierrc
+.prettierignore
+
+# Lock files
+package-lock.json
+
+# Misc
+*.log
+*.tmp
+*.swp
